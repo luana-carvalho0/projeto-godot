@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "EnemyTexture",
 "language": "GDScript",
 "path": "res://scripts/enemy/enemy_texture.gd"
+}, {
+"base": "EnemyTexture",
+"class": "WhaleTexture",
+"language": "GDScript",
+"path": "res://scripts/enemy/whale/texture.gd"
 } ]
 _global_script_class_icons={
 "DetectionArea": "",
 "EnemyTemplate": "",
-"EnemyTexture": ""
+"EnemyTexture": "",
+"WhaleTexture": ""
 }
 
 [application]
