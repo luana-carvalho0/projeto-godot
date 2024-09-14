@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "InventoryContainer",
 "language": "GDScript",
 "path": "res://scripts/interface/player/inventory_conteiner.gd"
+}, {
+"base": "TextureRect",
+"class": "WeaponContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/weapon_slot.gd"
 } ]
 _global_script_class_icons={
 "ConsumableContainer": "",
 "EquipmentContainer": "",
 "InterfaceItem": "",
-"InventoryContainer": ""
+"InventoryContainer": "",
+"WeaponContainer": ""
 }
 
 [application]
