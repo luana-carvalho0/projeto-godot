@@ -89,7 +89,11 @@ func update_slot()-> void:
 	item_image_path = ""
 	
 	type_value = 0
-	sell price = 0
+	sell_price = 0
+	
+	emit_signal("empty_slot", item_index)
+	
+	
 	
 	
 	
