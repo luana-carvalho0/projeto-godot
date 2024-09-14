@@ -87,6 +87,53 @@ func _process(_delta: float)-> void:
 		yield(get_tree().create_timer(0.1), "timeout")
 		modulate.a = 0.5
 		
+func equip_item()-> void:
+	if item_type == "Resource":
+		return
+	if item_type == "Health" or item_type == "Mana":
+		get_tree().call_group(
+			"equipment_container",
+			"consumable_slot",
+			item_texture.texture,
+			[
+				item_image_path,
+				amount,
+				item_name,
+				item_type,
+				type_value,
+				sell_price
+			]
+		)
+		
+	if item_type == "Equipment":
+		get_tree().call_group(
+			"equipment_container",
+			"armor_slot",
+			item_texture.texture,
+			[
+				item_image_path,
+				item_name,
+				item_type,
+				item_dictionary,
+				sell_price
+			]
+		)
+		
+	if item_type == "Weapon":
+		get_tree().call_group(
+			"equipment_container",
+			"weapon_slot",
+			item_texture.texture,
+			[
+				item_image_path,
+				item_name,
+				item_type,
+				item_dictionary,
+				sell_price
+			]
+		)
+	update_slot()
+		
 func update_slot()-> void:
 	item_amount.hide()
 	item_texture.hide()
