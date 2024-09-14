@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "TextureRect",
+"class": "ArmorContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/armor_slot.gd"
+}, {
+"base": "TextureRect",
 "class": "ConsumableContainer",
 "language": "GDScript",
 "path": "res://scripts/interface/player/consumable_slot.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://scripts/interface/player/weapon_slot.gd"
 } ]
 _global_script_class_icons={
+"ArmorContainer": "",
 "ConsumableContainer": "",
 "EquipmentContainer": "",
 "InterfaceItem": "",

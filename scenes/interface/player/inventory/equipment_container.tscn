@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/font/bit_potion.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/interface/inventory/item_background/type_1.png" type="Texture" id=2]
 [ext_resource path="res://scripts/interface/player/equipment_container.gd" type="Script" id=3]
 [ext_resource path="res://scripts/interface/player/consumable_slot.gd" type="Script" id=4]
 [ext_resource path="res://scripts/interface/player/weapon_slot.gd" type="Script" id=5]
+[ext_resource path="res://scripts/interface/player/armor_slot.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -172,8 +173,10 @@ margin_top = 24.0
 margin_right = 20.0
 margin_bottom = 44.0
 texture = ExtResource( 2 )
+script = ExtResource( 6 )
 
 [node name="Item" type="TextureRect" parent="VContainer/ArmorBackground"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
