@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "InventoryContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/inventory_conteiner.gd"
+} ]
+_global_script_class_icons={
+"InventoryContainer": ""
+}
+
 [application]
 
 config/name="projeto-godot"
