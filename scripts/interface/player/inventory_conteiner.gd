@@ -77,7 +77,9 @@ func _ready()-> void:
 	for icon in aux_h_container.get_children():
 		icon.connect("mouse_exited", self, "mouse_interaction", ["exited", icon])
 		icon.connect("mouse_entered", self, "mouse_interaction", ["entered", icon])
+		
 	for children in slot_container.get_children():
+		children.connect("item_clicked", self, "on_item_clicked")
 		children.connect("empty_slot", self, "empty_slot")
 		
 		
@@ -127,6 +129,10 @@ func reset()-> void:
 	aux_animation.play("hide_container")
 	for children in slot_container.get_children():
 		children.reset()
+		
+func on_iten_clicked(index: int) -> void:
+	aux_animation.play("show_container")
+	item_index = index
 	
 func mouse_interaction(state: String, object: TextureRect) -> void:
 	match state:

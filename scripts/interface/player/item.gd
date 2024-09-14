@@ -2,7 +2,7 @@ extends TextureRect
 class_name InterfaceItem
 
 signal empty_slot
-#signal item_clicked
+signal item_clicked
 
 onready var item_texture: TextureRect = get_node("ItemTexture")
 onready var item_amount: Label = get_node("Amount")
@@ -22,9 +22,9 @@ var item_type: String
 var item_image_path: String
 
 var texture_list: Array = [
-	"res://assets/interface/intentory/item_background/type_1.png",
-	"res://assets/interface/intentory/item_background/type_2.png",
-	"res://assets/interface/intentory/item_background/type_3.png"
+	"res://assets/interface/inventory/item_background/type_1.png",
+	"res://assets/interface/inventory/item_background/type_2.png",
+	"res://assets/interface/inventory/item_background/type_3.png"
 ]
 
 func _ready()-> void:
@@ -79,6 +79,14 @@ func update_item(item: String, item_image:StreamTexture, item_info: Array) -> vo
 	if item_type == "Equipment" or item_type == "Weapon":
 		item_texture.show()
 		
+func _process(_delta: float)-> void:
+	if Input.is_action_just_pressed("click") and can_click and item_name != "":
+		emit_signal("item_clicked", item_index)
+		
+		modulate.a = 0.2
+		yield(get_tree().create_timer(0.1), "timeout")
+		modulate.a = 0.5
+		
 func update_slot()-> void:
 	item_amount.hide()
 	item_texture.hide()
@@ -93,7 +101,12 @@ func update_slot()-> void:
 	
 	emit_signal("empty_slot", item_index)
 	
-	
+func update_amout(value: int) -> void:
+	var new_amount: int = amount  - value
+	item_amount.text = str(new_amount)
+	amount = new_amount
+	if new_amount == 0:
+		update_slot()
 	
 	
 	
