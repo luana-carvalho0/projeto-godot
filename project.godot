@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureRect",
+"class": "InterfaceItem",
+"language": "GDScript",
+"path": "res://scripts/interface/player/item.gd"
+}, {
 "base": "Control",
 "class": "InventoryContainer",
 "language": "GDScript",
 "path": "res://scripts/interface/player/inventory_conteiner.gd"
 } ]
 _global_script_class_icons={
+"InterfaceItem": "",
 "InventoryContainer": ""
 }
 
