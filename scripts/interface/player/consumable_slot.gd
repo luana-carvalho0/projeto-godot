@@ -63,3 +63,39 @@ func update_consumable_slot(item_texture: StreamTexture, item_info: Array)-> voi
 	consumable_amount.text = str(consumable_item_amount)
 	consumable_item.texture = item_texture
 	consumable_amount.show()
+	
+func _process(_delta: float)-> void:
+	if Input.is_action_just_pressed("click") and can_click:
+		if consumable_item_amount > 0:
+			match consumable_item_type:
+				"Health":
+					get_tree().call_group("player_stats", "update_health", "Increase", consumable_item_type_value)
+				"Mana":
+					get_tree().call_group("player_stats", "update_mana", "Increase", consumable_item_type_value)
+			
+			consumable_item_amount -= 1
+			
+			if consumable_item_amount == 0:
+				reset()
+				
+			consumable_amount.text = str(consumable_item_amount)
+
+func on_mouse_entered()-> void:
+	can_click = true
+	modulate.a = .5
+
+
+func on_mouse_exited()-> void:
+	can_click = false
+	modulate.a = 1.0
+	
+func reset()-> void:
+	consumable_item_name = ""
+	consumable_texture_path = ""
+	consumable_item_type = ""
+	
+	consumable_item_price = 0
+	consumable_item_type_value = 0
+	
+	consumable_amount.hide()
+	consumable_item.texture = null

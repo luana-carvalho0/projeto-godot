@@ -188,3 +188,6 @@ stretch_mode = 3
 anims/RESET = SubResource( 2 )
 anims/hide_container = SubResource( 3 )
 "anims/show_container " = SubResource( 4 )
+
+[connection signal="mouse_entered" from="ConsumableBackground" to="ConsumableBackground" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="ConsumableBackground" to="ConsumableBackground" method="on_mouse_exited"]
