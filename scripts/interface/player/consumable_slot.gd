@@ -84,7 +84,6 @@ func on_mouse_entered()-> void:
 	can_click = true
 	modulate.a = .5
 
-
 func on_mouse_exited()-> void:
 	can_click = false
 	modulate.a = 1.0
