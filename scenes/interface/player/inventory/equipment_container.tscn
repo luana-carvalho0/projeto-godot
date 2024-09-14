@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/font/bit_potion.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/interface/inventory/item_background/type_1.png" type="Texture" id=2]
+[ext_resource path="res://scripts/interface/player/equipment_container.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -91,7 +92,6 @@ tracks/1/keys = {
 }
 
 [node name="EquipmentContainer" type="Control"]
-visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
@@ -99,6 +99,7 @@ margin_top = -49.0
 margin_right = 49.0
 margin_bottom = -5.0
 rect_min_size = Vector2( 44, 44 )
+script = ExtResource( 3 )
 
 [node name="ConsumableBackground" type="TextureRect" parent="."]
 anchor_top = 0.5
