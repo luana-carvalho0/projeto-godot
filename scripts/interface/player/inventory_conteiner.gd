@@ -150,9 +150,9 @@ func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed("click") and can_click and current_state != "":
 		match current_state:
 			"Equip":
-				slot_container.get_child(item_idex).equip_item()
+				slot_container.get_child(item_index).equip_item()
 			"Delete":
-				slot_container.get_child(item_idex).update_slot()
+				slot_container.get_child(item_index).update_slot()
 		item_index = -1
 		current_state = ""
 		aux_animation.play("hide_container")
