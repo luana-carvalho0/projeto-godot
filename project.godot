@@ -15,9 +15,19 @@ _global_script_classes=[ {
 "path": "res://scripts/env/background.gd"
 }, {
 "base": "Area2D",
+"class": "CollisionArea",
+"language": "GDScript",
+"path": "res://scripts/enemy/collision_area.gd"
+}, {
+"base": "Area2D",
 "class": "DetectionArea",
 "language": "GDScript",
 "path": "res://scripts/enemy/detection_area.gd"
+}, {
+"base": "Area2D",
+"class": "EnemyAttackArea",
+"language": "GDScript",
+"path": "res://scripts/enemy/enemy_attack_area.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "EnemyTemplate",
@@ -34,10 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/whale/texture.gd"
 } ]
-
 _global_script_class_icons={
 "Background": "",
+"CollisionArea": "",
 "DetectionArea": "",
+"EnemyAttackArea": "",
 "EnemyTemplate": "",
 "EnemyTexture": "",
 "WhaleTexture": ""
@@ -52,10 +63,17 @@ config/icon="res://icon.png"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=640  # ou 1280, dependendo da sua escolha
-window/size/test_height=360  # ou 720, dependendo da sua escolha
-window/stretch/mode="2d"
+window/size/test_width=640
 window/stretch/aspect="keep"
+#ou1280,dependendodasuaescolhawindow/size/test_height=360
+#ou720,dependendodasuaescolhawindow/stretch/mode="2d"
+
+[layer_names]
+
+2d_physics/layer_1="Tile"
+2d_physics/layer_2="SlideTile"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Enemy"
 
 [physics]
 
