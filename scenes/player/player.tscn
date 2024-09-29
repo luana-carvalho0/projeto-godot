@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Texture" type="Sprite" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="LevelCamera" type="Camera2D" parent="."]

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ParallaxBackground",
+"class": "Background",
+"language": "GDScript",
+"path": "res://scripts/env/background.gd"
+}, {
 "base": "Area2D",
 "class": "DetectionArea",
 "language": "GDScript",
@@ -29,7 +34,9 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/whale/texture.gd"
 } ]
+
 _global_script_class_icons={
+"Background": "",
 "DetectionArea": "",
 "EnemyTemplate": "",
 "EnemyTexture": "",
@@ -45,8 +52,8 @@ config/icon="res://icon.png"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=640
-window/size/test_height=360
+window/size/test_width=640  # ou 1280, dependendo da sua escolha
+window/size/test_height=360  # ou 720, dependendo da sua escolha
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
