@@ -3,11 +3,11 @@ class_name ArmorContainer
 
 onready var armor_item: TextureRect = get_node("Item")
 var armor_dictionary: Dictionary = {}
-var amor_name: String = ""
-var amor_type: String = ""
-var amor_texture_path: String = ""
+var armor_name: String = ""
+var armor_type: String = ""
+var armor_texture_path: String = ""
 
-var amor_price: int
+var armor_price: int
 
 func update_armor_slot(item_texture: StreamTexture, item_info: Array) -> void:
 	if armor_name != "":
