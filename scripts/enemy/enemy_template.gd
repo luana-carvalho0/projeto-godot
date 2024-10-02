@@ -10,7 +10,9 @@ var can_hit: bool = false
 var can_attack: bool = false
 
 var velocity: Vector2
+var drop_list: Dictionary
 var player_ref: Player = null
+
 
 export(int) var speed
 export(int) var gravity_speed
