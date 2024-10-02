@@ -43,6 +43,36 @@ _global_script_classes=[ {
 "class": "Background",
 "language": "GDScript",
 "path": "res://scripts/env/background.gd"
+}, {
+"base": "Area2D",
+"class": "CollisionArea",
+"language": "GDScript",
+"path": "res://scripts/enemy/collision_area.gd"
+}, {
+"base": "Area2D",
+"class": "DetectionArea",
+"language": "GDScript",
+"path": "res://scripts/enemy/detection_area.gd"
+}, {
+"base": "Area2D",
+"class": "EnemyAttackArea",
+"language": "GDScript",
+"path": "res://scripts/enemy/enemy_attack_area.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "EnemyTemplate",
+"language": "GDScript",
+"path": "res://scripts/enemy/enemy_template.gd"
+}, {
+"base": "Sprite",
+"class": "EnemyTexture",
+"language": "GDScript",
+"path": "res://scripts/enemy/enemy_texture.gd"
+}, {
+"base": "EnemyTexture",
+"class": "WhaleTexture",
+"language": "GDScript",
+"path": "res://scripts/enemy/whale/texture.gd"
 } ]
 
 _global_script_class_icons={
@@ -52,7 +82,13 @@ _global_script_class_icons={
 "InterfaceItem": "",
 "InventoryContainer": "",
 "WeaponContainer": "",
-"Background": ""
+"Background": "",
+"CollisionArea": "",
+"DetectionArea": "",
+"EnemyAttackArea": "",
+"EnemyTemplate": "",
+"EnemyTexture": "",
+"WhaleTexture": ""
 }
 
 [application]
@@ -64,16 +100,18 @@ config/icon="res://icon.png"
 
 window/size/width=320
 window/size/height=180
-; Escolha entre uma das resoluções abaixo
-; Resolução do arquivo "Entrada":
-window/size/test_width=640
-window/size/test_height=320
-; ou Resolução do arquivo "Atual":
-; window/size/test_width=1280
-; window/size/test_height=720
-
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
 
 [input]
 
@@ -83,10 +121,9 @@ click={
  ]
 }
 
-[physics]
+[layer_names]
 
-common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
+2d_physics/layer_1="Tile"
+2d_physics/layer_2="SlideTile"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Enemy"
