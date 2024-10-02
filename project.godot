@@ -14,31 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interface/player/armor_slot.gd"
 }, {
-"base": "TextureRect",
-"class": "ConsumableContainer",
-"language": "GDScript",
-"path": "res://scripts/interface/player/consumable_slot.gd"
-}, {
-"base": "Control",
-"class": "EquipmentContainer",
-"language": "GDScript",
-"path": "res://scripts/interface/player/equipment_container.gd"
-}, {
-"base": "TextureRect",
-"class": "InterfaceItem",
-"language": "GDScript",
-"path": "res://scripts/interface/player/item.gd"
-}, {
-"base": "Control",
-"class": "InventoryContainer",
-"language": "GDScript",
-"path": "res://scripts/interface/player/inventory_conteiner.gd"
-}, {
-"base": "TextureRect",
-"class": "WeaponContainer",
-"language": "GDScript",
-"path": "res://scripts/interface/player/weapon_slot.gd"
-}, {
 "base": "ParallaxBackground",
 "class": "Background",
 "language": "GDScript",
@@ -48,6 +23,11 @@ _global_script_classes=[ {
 "class": "CollisionArea",
 "language": "GDScript",
 "path": "res://scripts/enemy/collision_area.gd"
+}, {
+"base": "TextureRect",
+"class": "ConsumableContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/consumable_slot.gd"
 }, {
 "base": "Area2D",
 "class": "DetectionArea",
@@ -69,6 +49,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/enemy_texture.gd"
 }, {
+"base": "Control",
+"class": "EquipmentContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/equipment_container.gd"
+}, {
+"base": "TextureRect",
+"class": "InterfaceItem",
+"language": "GDScript",
+"path": "res://scripts/interface/player/item.gd"
+}, {
+"base": "Control",
+"class": "InventoryContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/inventory_conteiner.gd"
+}, {
+"base": "TextureRect",
+"class": "WeaponContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/player/weapon_slot.gd"
+}, {
 "base": "EnemyTemplate",
 "class": "Whale",
 "language": "GDScript",
@@ -79,20 +79,19 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/whale/texture.gd"
 } ]
-
 _global_script_class_icons={
 "ArmorContainer": "",
-"ConsumableContainer": "",
-"EquipmentContainer": "",
-"InterfaceItem": "",
-"InventoryContainer": "",
-"WeaponContainer": "",
 "Background": "",
 "CollisionArea": "",
+"ConsumableContainer": "",
 "DetectionArea": "",
 "EnemyAttackArea": "",
 "EnemyTemplate": "",
 "EnemyTexture": "",
+"EquipmentContainer": "",
+"InterfaceItem": "",
+"InventoryContainer": "",
+"WeaponContainer": "",
 "Whale": "",
 "WhaleTexture": ""
 }
@@ -111,14 +110,6 @@ window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
-[physics]
-
-common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
-
 [input]
 
 click={
@@ -133,3 +124,11 @@ click={
 2d_physics/layer_2="SlideTile"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
