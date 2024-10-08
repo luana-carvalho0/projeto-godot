@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	move_behavior()
 	verify_position()
 	texture.animate(velocity)
-	velocity.move_and_slide(velocity, Vector2.UP)
+	move_and_slide(velocity, Vector2.UP)
 	
 func gravity(delta: float) -> void:
 	velocity.y += delta * gravity_speed
@@ -55,12 +55,13 @@ func floor_collision() -> bool:
 func verify_position() -> void:
 	if player_ref != null:
 		var direction: float = sign(player_ref.global_position.x - global_position.x)
-	if direction > 0:
-		texture.flip_h = true
-		floor_ray.position.x = abs(raycast_default_position)
-	elif direction < 0:
-		texture.flip_h = false
-		floor_ray.position.x = raycast_default_position
+		if direction > 0:
+			texture.flip_h = true
+			floor_ray.position.x = abs(raycast_default_position)
+		elif direction < 0:
+			texture.flip_h = false
+			floor_ray.position.x = raycast_default_position
+
 		
 func kill_enemy() -> void:
 	animation.play("kill")

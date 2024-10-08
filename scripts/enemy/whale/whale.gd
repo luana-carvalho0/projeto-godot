@@ -2,7 +2,6 @@ extends EnemyTemplate
 class_name Whale
 
 #
-var drop_list = {}
 
 func _ready()-> void:
 	randomize()
