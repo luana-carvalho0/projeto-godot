@@ -5,7 +5,12 @@ onready var time: Timer = get_node("Timer")
 
 export(int) var health
 export(float) var invulnerability_timer
-export(NodePath) onready var enemy = get_node(enemy) as KinematicBody2D
+export(NodePath) var enemy_path  # Caminho do nó do inimigo, para ser configurado no editor
+onready var enemy: KinematicBody2D = null  # Inicialize como nulo
+
+func _ready():
+	if enemy_path != null:
+		enemy = get_node(enemy_path) as KinematicBody2D  # Obtenha o nó do inimigo quando a cena estiver pronta
 
 func on_collision_area_entered(area):
 	if area.get_parent() is Player:

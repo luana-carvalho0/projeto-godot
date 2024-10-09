@@ -69,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/kasaobake/kasaobake.gd"
 }, {
+"base": "EnemyTexture",
+"class": "KasaObakeTexture",
+"language": "GDScript",
+"path": "res://scripts/enemy/kasaobake/texture.gd"
+}, {
 "base": "RigidBody2D",
 "class": "PhysicItem",
 "language": "GDScript",
@@ -117,6 +122,7 @@ _global_script_class_icons={
 "InterfaceItem": "",
 "InventoryContainer": "",
 "KasaObake": "",
+"KasaObakeTexture": "",
 "PhysicItem": "",
 "Player": "",
 "PlayerStats": "",
