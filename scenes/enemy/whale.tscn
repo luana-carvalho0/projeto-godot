@@ -423,7 +423,6 @@ script = ExtResource( 8 )
 texture = ExtResource( 2 )
 hframes = 44
 script = ExtResource( 4 )
-attack_area_collision = NodePath("")
 
 [node name="Collision" parent="." index="1"]
 visible = false
@@ -432,6 +431,10 @@ shape = SubResource( 4 )
 [node name="Collision" parent="DetectionArea" index="0"]
 visible = false
 shape = SubResource( 5 )
+
+[node name="CollisionArea" parent="." index="3"]
+health = 10
+enemy = NodePath("..")
 
 [node name="Collision" parent="CollisionArea" index="0"]
 visible = false
