@@ -42,7 +42,7 @@ visible = false
 [node name="Env" type="Node2D" parent="."]
 
 [node name="Shop" parent="Env" instance=ExtResource( 6 )]
-position = Vector2( -237, 100 )
+position = Vector2( -236, 108 )
 z_index = -2
 
 [node name="Enemy" type="Node2D" parent="."]
@@ -52,7 +52,7 @@ visible = false
 position = Vector2( 288, 117 )
 
 [node name="KasaObake" parent="Enemy" instance=ExtResource( 9 )]
-position = Vector2( 256, 112 )
+position = Vector2( 256, 119 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 32, 13 )
