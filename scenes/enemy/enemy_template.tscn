@@ -9,6 +9,10 @@
 [node name="EnemyTemplate" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 3 )
+speed = 5
+gravity_speed = 5
+proximity_threshold = 5
+raycast_default_position = 5
 
 [node name="Texture" type="Sprite" parent="."]
 script = ExtResource( 2 )

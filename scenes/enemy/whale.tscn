@@ -425,19 +425,15 @@ hframes = 44
 script = ExtResource( 4 )
 
 [node name="Collision" parent="." index="1"]
-visible = false
 shape = SubResource( 4 )
 
 [node name="Collision" parent="DetectionArea" index="0"]
-visible = false
 shape = SubResource( 5 )
 
 [node name="CollisionArea" parent="." index="3"]
 health = 10
-enemy = NodePath("..")
 
 [node name="Collision" parent="CollisionArea" index="0"]
-visible = false
 position = Vector2( 0, 3 )
 shape = SubResource( 8 )
 
@@ -461,6 +457,5 @@ anims/kill = SubResource( 9 )
 anims/run = SubResource( 3 )
 
 [node name="FloorRay" parent="." index="6"]
-visible = false
 enabled = true
 cast_to = Vector2( 0, 30 )

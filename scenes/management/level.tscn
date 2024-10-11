@@ -48,11 +48,18 @@ z_index = -2
 [node name="Enemy" type="Node2D" parent="."]
 
 [node name="Whale" parent="Enemy" instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 288, 117 )
+speed = 0
+gravity_speed = 0
+proximity_threshold = 0
+raycast_default_position = 0
 
 [node name="KasaObake" parent="Enemy" instance=ExtResource( 9 )]
 position = Vector2( 256, 119 )
+speed = 0
+gravity_speed = 0
+proximity_threshold = 0
+raycast_default_position = 0
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 32, 13 )
