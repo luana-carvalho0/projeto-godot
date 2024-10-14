@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/normal_decoration_tile.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/env/background.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/enemy/whale.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/enemy/kasaobake.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/music/among-the-cherry-blossom.ogg" type="AudioStream" id=10]
 
 [node name="Level" type="Node2D"]
 
@@ -42,24 +43,28 @@ visible = false
 [node name="Env" type="Node2D" parent="."]
 
 [node name="Shop" parent="Env" instance=ExtResource( 6 )]
-position = Vector2( -236, 108 )
+position = Vector2( -235, 104 )
 z_index = -2
 
 [node name="Enemy" type="Node2D" parent="."]
 
 [node name="Whale" parent="Enemy" instance=ExtResource( 7 )]
-position = Vector2( 288, 117 )
+position = Vector2( 475, 116 )
 speed = 0
 gravity_speed = 0
 proximity_threshold = 0
 raycast_default_position = 0
 
 [node name="KasaObake" parent="Enemy" instance=ExtResource( 9 )]
-position = Vector2( 256, 119 )
+position = Vector2( 273, 118 )
 speed = 0
 gravity_speed = 0
 proximity_threshold = 0
 raycast_default_position = 0
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 32, 13 )
+position = Vector2( 43, 102 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
