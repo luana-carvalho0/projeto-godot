@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/among-the-cherry-blossom.ogg-8855fdf8590016b4ee09915bd011255b.oggstr"
+
+[deps]
+
+source_file="res://assets/music/among-the-cherry-blossom.ogg"
+dest_files=[ "res://.import/among-the-cherry-blossom.ogg-8855fdf8590016b4ee09915bd011255b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
