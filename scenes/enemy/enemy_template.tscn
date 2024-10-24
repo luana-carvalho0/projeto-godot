@@ -9,10 +9,6 @@
 [node name="EnemyTemplate" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 3 )
-speed = 5
-gravity_speed = 5
-proximity_threshold = 5
-raycast_default_position = 5
 
 [node name="Texture" type="Sprite" parent="."]
 script = ExtResource( 2 )
@@ -34,6 +30,7 @@ enemy = NodePath("..")
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 4 )
+enemy_path = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
 

@@ -1,10 +1,13 @@
 extends Node
 class_name PlayerStats
 
-export (NodePath) onready var player  = get_node(player) as KinematicBody2D
-export (NodePath) onready var collision_area = get(collision_area) as Area2D
+export (NodePath) var player_path  # Caminho do player
+export (NodePath) var collision_area_path  # Caminho do Area2D de colisão
 
-onready var invencibility_timer: Timer = get_node("InvencibilityTimer")
+# Referências para os nós
+onready var player: KinematicBody2D = get_node(player_path) as KinematicBody2D
+onready var collision_area: Area2D = get_node(collision_area_path) as Area2D
+onready var invencibility_timer: Timer = get_node("InvencibilityTimer")  # Certifique-se que o nome do nó é esse
 
 var shielding: bool = false
 
@@ -44,7 +47,7 @@ var level_dict: Dictionary = {
 }
 
 # Called when the node enters the scene tree for the first time.
-onready var invencibillity_timer: Timer = get_node("InverncibillityTimer")
+#onready var invencibillity_timer: Timer = get_node("InverncibillityTimer")
 func _ready() -> void:
 	current_mana = base_mana + bonus_mana
 	max_mana = current_mana
@@ -104,21 +107,9 @@ func update_mana(type: String, value: int) -> void:
 			current_mana -= value
 			
 			
-func _process( _delta) -> void:
-	if Input.is_action_just_pressed("ui_select"):
-		update_health("Decrease", 5)
-
-
-func on_collision_area_area_entered(area):
-	if area.name == "EnemyAttackArea":
-		update_health("Decrease", area.damage)
-		collision_area.set_deferred('monitoring', false)
-
-
-func on_Inverncibillity_timer_timeout():
-	collision_area.set_deferred('monitoring', true)
-	pass # Replace with function body.
-	
+#func _process(_delta) -> void:
+#	if Input.is_action_just_pressed("ui_select"):
+#		update_health("Decrease", 5)
 
 
 func on_collision_area_entered(area):

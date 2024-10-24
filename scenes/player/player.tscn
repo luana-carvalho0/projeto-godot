@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/player/playerUmbrellaALL.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=2]
 [ext_resource path="res://scripts/player/player_texture.gd" type="Script" id=3]
 [ext_resource path="res://assets/effect/light.png" type="Texture" id=4]
 [ext_resource path="res://scripts/player/player_stats.gd" type="Script" id=5]
-[ext_resource path="res://scripts/enemy/collision_area.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 6, 25 )
@@ -398,7 +397,10 @@ collision_mask = 3
 script = ExtResource( 2 )
 speed = 75
 jump_speed = -175
-player_gravity = 200
+wall_jump_speed = 150
+wall_gravity = 115
+player_gravity = 350
+wall_impulse_speed = 500
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 26.5 )
@@ -461,8 +463,8 @@ anims/light_animation = SubResource( 13 )
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 5 )
-player = NodePath("..")
-collision_area = NodePath("../CollisionArea")
+player_path = NodePath("..")
+collision_area_path = NodePath("../CollisionArea")
 
 [node name="InvencibilityTimer" type="Timer" parent="Stats"]
 one_shot = true
@@ -470,7 +472,6 @@ one_shot = true
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource( 6 )
 
 [node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2( -1, 26.5 )
