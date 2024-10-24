@@ -22,5 +22,9 @@ func _process(_delta: float)-> void:
 		player_ref.is_on_floor() and
 		can_interact
 	):
-		print("aqui!")
+		interactable_action()
 		can_interact = false
+
+func interactable_action() -> void:
+
+	pass
