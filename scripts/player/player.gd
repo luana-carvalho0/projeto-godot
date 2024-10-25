@@ -113,3 +113,13 @@ func next_to_wall() -> bool:
 	else:
 		not_on_wall = true
 		return false
+		
+func spawn_effect(effect_path: String , offset: Vector2, is_flipped: bool)-> void:
+	var effect_isntance: EffectTemplate = load(effect_path).instance()
+	get_tree().root.call_deferred("add_child", effect_isntance)
+	if is_flipped:
+		effect_isntance.flip_h = true
+		
+	effect_isntance.global_position = global_position + offset
+	effect_isntance.play_effect()
+	
