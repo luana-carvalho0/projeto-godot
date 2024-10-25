@@ -4,8 +4,8 @@ class_name BarContainer
 onready var tween: Tween = get_node("Tween")
 
 onready var health_bar: TextureProgress = get_node("HealthBarBackground/HealthBar")
-onready var mana_bar: TextureProgress = get_node("ManaBarBackground/TextureProgress")
-onready var exp_bar: TextureProgress = get_node("ExpBarBackground/TextureProgress")
+onready var mana_bar: TextureProgress = get_node("ManaBarBackground/ManaBar")
+onready var exp_bar: TextureProgress = get_node("ExpBarBackground/ExpBar")
 
 var current_exp: int
 var current_mana: int
@@ -39,18 +39,18 @@ func increase_max_value(type: String, max_value: int, value: int)-> void:
 func update_bar(type: String, value: int)-> void:
 	match type:
 		"HealhBar":
-			call_twen(health_bar, current_health, value)
+			call_tween(health_bar, current_health, value)
 			current_health = value
 			
 		"ManaBar":
-			call_twen(mana_bar, current_mana, value)
+			call_tween(mana_bar, current_mana, value)
 			current_mana = value
 			
 		"ExpBar":
-			call_twen(exp_bar, current_exp, value)
+			call_tween(exp_bar, current_exp, value)
 			current_exp = value		
 				
-func call_twen(bar: TextureProgress, initial_value: int, final_value: int)-> void:
+func call_tween(bar: TextureProgress, initial_value: int, final_value: int)-> void:
 	var _interpolate_value: bool = tween.interpolate_property(
 		bar, 
 		"value",

@@ -51,8 +51,11 @@ var level_dict: Dictionary = {
 func _ready() -> void:
 	current_mana = base_mana + bonus_mana
 	max_mana = current_mana
+	
 	current_health = base_health + bonus_health
 	max_health = current_health
+	
+	get_tree().call_group("bar_container", "init_bar", max_health, max_mana,level_dict[str(level)] )
 
 # Level up player level function
 
