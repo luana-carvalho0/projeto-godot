@@ -287,6 +287,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "landing"
+length = 0.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:frame")
