@@ -462,7 +462,7 @@ autoplay = "light_animation"
 anims/RESET = SubResource( 12 )
 anims/light_animation = SubResource( 13 )
 
-[node name="Stats" type="Node" parent="."]
+[node name="Stats" type="Node" parent="." groups=["player_stats"]]
 script = ExtResource( 5 )
 player_path = NodePath("..")
 collision_area_path = NodePath("../CollisionArea")

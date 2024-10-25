@@ -61,6 +61,7 @@ func _ready() -> void:
 
 func update_exp(value: int) -> void:
 	current_exp += value
+	get_tree().call_group("bar_container", "update_bar", "ExpBar", current_exp)
 	if current_exp >= level_dict[str(level)] and level < 9:
 		var leftover: int = current_exp - level_dict[str(level)]
 		current_exp = leftover
@@ -73,6 +74,12 @@ func update_exp(value: int) -> void:
 func on_level_up() -> void:
 	current_mana = base_mana + bonus_mana
 	current_health = base_health + bonus_health
+	
+	get_tree().call_group("bar_container", "update_bar", "ManaBar", current_mana)
+	get_tree().call_group("bar_container", "update_bar", "HealthBar", current_health)
+	
+	yield(get_tree().create_timer(0.2), "timeout")
+	get_tree().call_group("bar_container", "reset_exp_bar", level_dict[str(level)], current_exp)
 	
 func update_health(type: String, value: int) -> void: 
 	match type:

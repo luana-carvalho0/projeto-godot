@@ -49,6 +49,13 @@ func update_bar(type: String, value: int)-> void:
 		"ExpBar":
 			call_tween(exp_bar, current_exp, value)
 			current_exp = value		
+			
+func reset_exp_bar(max_exp:int, value: int)-> void:
+	exp_bar.max_value = max_exp
+	exp_bar.value = value
+	current_exp = value
+	
+	call_tween(exp_bar, 0, current_exp)
 				
 func call_tween(bar: TextureProgress, initial_value: int, final_value: int)-> void:
 	var _interpolate_value: bool = tween.interpolate_property(
