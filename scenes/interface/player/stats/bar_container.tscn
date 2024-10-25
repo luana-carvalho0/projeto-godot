@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/interface/stats/bar/exp_bar_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/interface/stats/bar/health_bar_background.png" type="Texture" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://assets/interface/stats/bar/health_bar.png" type="Texture" id=4]
 [ext_resource path="res://assets/interface/stats/bar/mana_bar.png" type="Texture" id=5]
 [ext_resource path="res://assets/interface/stats/bar/exp_bar.png" type="Texture" id=6]
+[ext_resource path="res://scripts/interface/player/bar_container.gd" type="Script" id=7]
 
 [node name="BarContainer" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 
 [node name="HealthBarBackground" type="TextureRect" parent="."]
 margin_left = 5.0
@@ -42,6 +44,7 @@ margin_right = 47.0
 margin_bottom = 9.0
 value = 100.0
 texture_progress = ExtResource( 6 )
+fill_mode = 1
 
 [node name="ManaBarBackground" type="TextureRect" parent="."]
 margin_left = 19.0
@@ -57,3 +60,5 @@ margin_right = 47.0
 margin_bottom = 8.0
 value = 100.0
 texture_progress = ExtResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
