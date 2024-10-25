@@ -1,0 +1,20 @@
+
+*** These modified files were found in JOE when it aborted on Fri Oct 25 15:09:36 2024
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/home/2020.1.08.012/projeto-godot/.git/MERGE_MSG
+
+*** File '/home/2020.1.08.012/projeto-godot/.git/MERGE_MSG'
+Merge branch 'main' of https://github.com/luana-carvalho0/projeto-godot
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
