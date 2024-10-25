@@ -435,7 +435,7 @@ shape = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="CollisionArea" parent="." index="3"]
-health = 10
+health = 3
 
 [node name="Collision" parent="CollisionArea" index="0"]
 position = Vector2( 0, 3 )
