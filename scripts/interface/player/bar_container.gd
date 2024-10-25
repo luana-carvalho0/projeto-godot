@@ -38,7 +38,7 @@ func increase_max_value(type: String, max_value: int, value: int)-> void:
 			
 func update_bar(type: String, value: int)-> void:
 	match type:
-		"HealhBar":
+		"HealthBar":
 			call_tween(health_bar, current_health, value)
 			current_health = value
 			
