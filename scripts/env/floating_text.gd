@@ -1,16 +1,77 @@
 extends Label
+class_name FloatText
 
+onready var tween: Tween = get_node("Tween")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var value: int
+var mass: int = 20
 
+var velocity: Vector2
+var gravity: Vector2 = Vector2.UP
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var type: String = ""
+var type_sign: String = ""
 
+export(Color) var exp_color
+export(Color) var heal_color
+export(Color) var mana_color
+export(Color) var damage_color
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _ready()-> void:
+	randomize()
+	velocity = Vector2(
+		rand_range(-10,10),
+		-30
+	)
+	
+	floating_text()
+	
+func floating_text()-> void:
+	text=type_sign + str(value)
+	match type:
+		"Exp":
+			modulate = exp_color
+		"Heal":
+			modulate = heal_color
+		"Mana":
+			modulate = mana_color
+		"Damage":
+			modulate = damage_color 
+			
+	interpolate()
+	
+func interpolate()-> void:
+	tween.interpolate_property(
+		self,
+		"modulate:a",
+		1.0,
+		0.0,
+		0.3,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_OUT,
+		0.7
+	)
+	
+	tween.interpolate_property(
+		self,
+		"rect_scale",
+		Vector2(0.0, 0.0),
+		Vector2(1.0, 1.0),
+		0.3,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_OUT
+	)
+	
+	tween.interpolate_property(
+		self,
+		"rect_scale",
+		Vector2(1.0, 1.0),
+		Vector2(0.4, 0.4),
+		1.0,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_OUT
+	)
+	
+	tween.start()
+	yield(tween, "tween_all_completed")
+	queue_free()
