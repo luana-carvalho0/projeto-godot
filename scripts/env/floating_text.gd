@@ -41,7 +41,7 @@ func floating_text()-> void:
 	interpolate()
 	
 func interpolate()-> void:
-	tween.interpolate_property(
+	var _interpolate_modulate: bool = tween.interpolate_property(
 		self,
 		"modulate:a",
 		1.0,
@@ -52,7 +52,7 @@ func interpolate()-> void:
 		0.7
 	)
 	
-	tween.interpolate_property(
+	var _interpolate_scale_up: bool = tween.interpolate_property(
 		self,
 		"rect_scale",
 		Vector2(0.0, 0.0),
@@ -62,7 +62,7 @@ func interpolate()-> void:
 		Tween.EASE_OUT
 	)
 	
-	tween.interpolate_property(
+	var _interpolate_scale_down: bool = tween.interpolate_property(
 		self,
 		"rect_scale",
 		Vector2(1.0, 1.0),
@@ -72,6 +72,10 @@ func interpolate()-> void:
 		Tween.EASE_OUT
 	)
 	
-	tween.start()
+	var _start: bool = tween.start()
 	yield(tween, "tween_all_completed")
 	queue_free()
+
+func _process(delta: float)-> void:
+	velocity += gravity * mass * delta
+	rect_position += velocity * delta

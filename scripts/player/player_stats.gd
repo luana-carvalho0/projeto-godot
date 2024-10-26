@@ -3,6 +3,7 @@ class_name PlayerStats
 
 export (NodePath) var player_path  # Caminho do player
 export (NodePath) var collision_area_path  # Caminho do Area2D de colisão
+export (PackedScene) var floating_text
 
 # Referências para os nós
 onready var player: KinematicBody2D = get_node(player_path) as KinematicBody2D
@@ -61,6 +62,7 @@ func _ready() -> void:
 
 func update_exp(value: int) -> void:
 	current_exp += value
+	spawn_floating_text("+", "Exp", value)
 	get_tree().call_group("bar_container", "update_bar", "ExpBar", current_exp)
 	if current_exp >= level_dict[str(level)] and level < 9:
 		var leftover: int = current_exp - level_dict[str(level)]
@@ -85,6 +87,7 @@ func update_health(type: String, value: int) -> void:
 	match type:
 		"Increase":
 			current_health += value
+			spawn_floating_text("+", "Heal", value)
 			if current_health >= max_health:
 				current_health = max_health
 				
@@ -103,8 +106,10 @@ func verify_shield(value: int) -> void:
 		if (base_defense + bonus_defense) >= value:
 			return 
 		var damage = abs((base_defense + bonus_defense)  - value)
+		spawn_floating_text("-", "Damage", damage)
 		current_health -= damage
 	else:
+		spawn_floating_text("-", "Damage", value)
 		current_health -= value
 		
 func update_mana(type: String, value: int) -> void:
@@ -130,3 +135,13 @@ func on_collision_area_entered(area):
 
 func on_invencibility_timer_timeout() -> void:
 	collision_area.set_deferred("monitoring", true)
+	
+func spawn_floating_text(type_sign: String, type: String, value: int)-> void:
+	var text: FloatText = floating_text.instance() 
+	text.rect_global_position = player.global_position
+	
+	text.type = type
+	text.value = value
+	text.type_sign = type_sign
+	
+	get_tree().root.call_deferred("add_child", text)
