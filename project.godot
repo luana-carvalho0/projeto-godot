@@ -159,9 +159,7 @@ _global_script_class_icons={
 [application]
 
 config/name="projeto-godot"
-run/main_scene="res://scenes/interface/initial_screen.tscn"
-config/icon="res://icon.png"
-<<<<<<<HEADrun/main_scene="res://scenes/interface/initial_screen.tscn"
+run/main_scene="res://scenes/management/level.tscn"
 
 [display]
 
