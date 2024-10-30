@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/enemy/enemy_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/enemy/kasaobake/kasaObakeIdle.png" type="Texture" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://scripts/enemy/kasa/texture.gd" type="Script" id=5]
 [ext_resource path="res://assets/enemy/kasaobake/kasaObakeHit.png" type="Texture" id=6]
 [ext_resource path="res://assets/enemy/kasaobake/kasaObakeDeath.png" type="Texture" id=7]
+[ext_resource path="res://assets/enemy/kasaobake/kasaObakeAttack.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6, 15 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 300, 17 )
+extents = Vector2( 1500, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 5, 15 )
@@ -69,6 +70,70 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EnemyAttackArea/Collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EnemyAttackArea/Collision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -327,7 +392,7 @@ tracks/2/keys = {
 }
 
 [node name="Kasa" instance=ExtResource( 1 )]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 4 )
 speed = 60
 enemy_exp = 20
@@ -341,30 +406,28 @@ hframes = 6
 script = ExtResource( 5 )
 
 [node name="Collision" parent="." index="1"]
-visible = false
 shape = SubResource( 5 )
 
 [node name="Collision" parent="DetectionArea" index="0"]
-visible = false
 shape = SubResource( 6 )
 
 [node name="CollisionArea" parent="." index="3"]
-health = 10
+health = 3
 
 [node name="Collision" parent="CollisionArea" index="0"]
-visible = false
 shape = SubResource( 7 )
 
 [node name="EnemyAttackArea" parent="." index="4"]
 damage = 3
 
 [node name="Collision" parent="EnemyAttackArea" index="0"]
-visible = false
 shape = SubResource( 8 )
+disabled = true
 
 [node name="Animation" parent="." index="5"]
 autoplay = "idle"
 anims/RESET = SubResource( 1 )
+anims/attack = SubResource( 12 )
 anims/dead = SubResource( 9 )
 anims/hit = SubResource( 10 )
 anims/idle = SubResource( 2 )
