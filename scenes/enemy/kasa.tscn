@@ -409,10 +409,12 @@ script = ExtResource( 5 )
 shape = SubResource( 5 )
 
 [node name="Collision" parent="DetectionArea" index="0"]
+visible = false
 shape = SubResource( 6 )
 
 [node name="CollisionArea" parent="." index="3"]
 health = 3
+invulnerability_timer = 1.0
 
 [node name="Collision" parent="CollisionArea" index="0"]
 shape = SubResource( 7 )
@@ -438,3 +440,10 @@ anims/run = SubResource( 3 )
 position = Vector2( -7, 0 )
 enabled = true
 cast_to = Vector2( 0, 30 )
+
+[node name="EnemyBar" parent="." index="7"]
+margin_left = -20.0
+margin_top = -28.0
+margin_right = -20.0
+margin_bottom = -28.0
+rect_scale = Vector2( 0.6, 0.6 )

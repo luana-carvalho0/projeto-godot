@@ -45,6 +45,7 @@ tile_data = PoolIntArray( 458753, 1, 0, 458758, 1, 0, 458762, 0, 0, 458767, 1, 0
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="Mask" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="Env" type="Node2D" parent="."]
 
