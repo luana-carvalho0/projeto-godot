@@ -31,6 +31,8 @@ func _ready()-> void:
 	randomize()
 	var random_index: int = randi()%texture_list.size()
 	texture = load(texture_list[random_index])
+	assert(item_texture != null, "Erro: Nó 'ItemTexture' não foi encontrado")
+	assert(item_amount != null, "Erro: Nó 'Amount' não foi encontrado")
 
 func on_mouse_entered()-> void:
 	can_click = true
@@ -46,7 +48,7 @@ func update_item(item: String, item_image:StreamTexture, item_info: Array) -> vo
 	item_type = item_info[1]
 	
 	match item_type:
-		"Equipament":
+		"Equipment":
 			amount = 1
 			item_dictionary= item_info[2]
 			
@@ -56,7 +58,7 @@ func update_item(item: String, item_image:StreamTexture, item_info: Array) -> vo
 			
 		"Resource":
 			amount +=item_info[4]
-			type_value = item_info[2]
+			type_value = 0
 			
 		"Health":
 			amount +=item_info[4]

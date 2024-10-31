@@ -2,7 +2,7 @@ extends Control
 class_name InventoryContainer
 
 onready var slot_container:GridContainer = get_node("VContainer/Background/GridContainer")
-#onready var animation: AnimationPlayer = get_node("Animation")
+onready var animation: AnimationPlayer = get_node("Animation")
 
 onready var aux_animation: AnimationPlayer = get_node("Container/Animation")
 onready var aux_h_container: HBoxContainer = get_node("Container/HContainer")
@@ -88,7 +88,7 @@ func update_slot(item_name: String, item_image: StreamTexture, item_info: Array)
 	var existing_item_index: int = slot_list.find(item_name)
 	if existing_item_index != -1:
 		var item_slot: TextureRect = slot_container.get_child(existing_item_index)
-		if item_slot.amount < 9 and item_slot.item_type != "Equipament" and item_slot.item_type != "Weapon":
+		if item_slot.amount < 9 and item_slot.item_type != "Equipment" and item_slot.item_type != "Weapon":
 			var current_amount: int = item_slot.amount + item_info[4]
 			if current_amount > 9:
 				var leftover: int = current_amount - 9 
@@ -104,7 +104,7 @@ func update_slot(item_name: String, item_image: StreamTexture, item_info: Array)
 	var aux_item_index: int = slot_list.find_last(item_name)
 	if aux_item_index != -1:
 		var item_slot:TextureRect = slot_container.get_child(aux_item_index)
-		if item_slot.amount < 9 and item_slot.item_type !="Equipament" and item_slot.item_type != "Weapon":
+		if item_slot.amount < 9 and item_slot.item_type !="Equipment" and item_slot.item_type != "Weapon":
 			item_slot.update_item(item_name, item_image, item_info)
 			return
 			#caso preenche mais que nove implementar uma lógica de resto

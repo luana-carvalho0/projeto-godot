@@ -102,6 +102,7 @@ margin_top = -49.0
 margin_right = 49.0
 margin_bottom = -5.0
 rect_min_size = Vector2( 44, 44 )
+rect_scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 3 )
 
 [node name="ConsumableBackground" type="TextureRect" parent="."]
@@ -126,7 +127,6 @@ rect_min_size = Vector2( 16, 16 )
 expand = true
 
 [node name="Amount" type="Label" parent="ConsumableBackground"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -156,7 +156,6 @@ texture = ExtResource( 2 )
 script = ExtResource( 5 )
 
 [node name="Item" type="TextureRect" parent="VContainer/WeaponBackground"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -176,7 +175,6 @@ texture = ExtResource( 2 )
 script = ExtResource( 6 )
 
 [node name="Item" type="TextureRect" parent="VContainer/ArmorBackground"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
