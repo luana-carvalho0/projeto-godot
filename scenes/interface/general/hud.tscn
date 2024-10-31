@@ -11,5 +11,7 @@ script = ExtResource( 3 )
 [node name="BarContainer" parent="." instance=ExtResource( 1 )]
 
 [node name="EquipmentContainer" parent="." groups=["equipment_container"] instance=ExtResource( 4 )]
+margin_top = -40.0
+margin_bottom = 4.0
 
 [node name="InventoryConteiner" parent="." instance=ExtResource( 2 )]
