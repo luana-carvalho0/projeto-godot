@@ -66,6 +66,7 @@ func update_consumable_slot(item_texture: StreamTexture, item_info: Array)-> voi
 	
 func _process(_delta: float)-> void:
 	if Input.is_action_just_pressed("click") and can_click:
+		print("Tentativa de consumir item")
 		if consumable_item_amount > 0:
 			match consumable_item_type:
 				"Health":
