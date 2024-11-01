@@ -211,7 +211,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="InventoryConteiner" type="Control" groups=["inventory"]]
+[node name="InventoryContainer" type="Control" groups=["inventory"]]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
