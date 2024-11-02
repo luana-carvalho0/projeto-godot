@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/enemy_bar.gd"
 }, {
+"base": "Node2D",
+"class": "EnemySpawner",
+"language": "GDScript",
+"path": "res://scripts/env/enemy_spawner.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "EnemyTemplate",
 "language": "GDScript",
@@ -149,6 +154,7 @@ _global_script_class_icons={
 "EffectTemplate": "",
 "EnemyAttackArea": "",
 "EnemyHealthBar": "",
+"EnemySpawner": "",
 "EnemyTemplate": "",
 "EnemyTexture": "",
 "EquipmentContainer": "",
