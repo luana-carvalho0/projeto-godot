@@ -5,11 +5,19 @@ onready var aux_animation: AnimationPlayer = get_node("Dialogicon/AuxAnimation")
 var can_interact: bool = true
 var player_ref: KinematicBody2D = null
 
+var dialog_list: Dictionary = {
+	"name": "Merchant",
+	"portrait": "",
+	"dialog":[
+		"Ola, ...",
+		"Posso te ajudar?"
+	]
+}
+
 func on_shop_body_entered(body):
 	player_ref = body
 	if can_interact:
 		aux_animation.play("fade_in")
-
 
 func on_shop_body_exited(_body):
 	player_ref = null
@@ -26,5 +34,11 @@ func _process(_delta: float)-> void:
 		can_interact = false
 
 func interactable_action() -> void:
-
-	pass
+	get_tree().call_group("hud", "spawn_dialog", self, dialog_list)
+	aux_animation.play("fade_out")
+	player_ref.reset(true)
+	
+func on_dialog_finished() -> void:
+	can_interact = true
+	player_ref.reset(false)
+	aux_animation.play("fade_in")

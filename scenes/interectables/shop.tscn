@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/interactable/miscellaneous/shop.png" type="Texture" id=1]
 [ext_resource path="res://scripts/interectable/shop.gd" type="Script" id=2]
 [ext_resource path="res://assets/interface/dialog/interactable_icon.png" type="Texture" id=3]
+[ext_resource path="res://scenes/env/light.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 36 )
@@ -154,6 +155,12 @@ anims/idle = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 anims/fade_in = SubResource( 7 )
 anims/fade_out = SubResource( 8 )
+
+[node name="Light" parent="." instance=ExtResource( 4 )]
+position = Vector2( 40, -4 )
+
+[node name="Light2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -38, -8 )
 
 [connection signal="body_entered" from="." to="." method="on_shop_body_entered"]
 [connection signal="body_exited" from="." to="." method="on_shop_body_exited"]

@@ -123,3 +123,7 @@ func spawn_effect(effect_path: String , offset: Vector2, is_flipped: bool)-> voi
 	effect_isntance.global_position = global_position + offset
 	effect_isntance.play_effect()
 	
+func reset(state: bool)-> void:
+	set_physics_process(not state)
+	$Animation.play("idle")
+	

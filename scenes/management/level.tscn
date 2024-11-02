@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/normal_decoration_tile.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/env/background.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/management/level.gd" type="Script" id=7]
 [ext_resource path="res://scenes/interectables/shop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/env/enemy_spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/env/light.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/music/among-the-cherry-blossom.ogg" type="AudioStream" id=11]
 [ext_resource path="res://scenes/interface/general/hud.tscn" type="PackedScene" id=12]
 
@@ -28,19 +29,22 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 3
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 327671, 0, 0, 327672, 0, 1, 327673, 0, 1, 327674, 0, 1, 327675, 0, 1, 327676, 0, 2, 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 2, 262157, 0, 0, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 2, 393207, 0, 131072, 393208, 0, 131073, 393209, 0, 131073, 393210, 0, 131073, 393211, 0, 131073, 393212, 0, 131074, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131074, 327693, 0, 131072, 327694, 0, 131073, 327695, 0, 131073, 327696, 0, 131073, 327697, 0, 131074, 720909, 0, 0, 720910, 0, 1, 720911, 0, 1, 720912, 0, 1, 720913, 0, 1, 720914, 0, 1, 720915, 0, 1, 720916, 0, 1, 720917, 0, 1, 720918, 0, 1, 720919, 0, 1, 720920, 0, 1, 720921, 0, 1, 720922, 0, 1, 720923, 0, 2, 786445, 0, 131072, 786446, 0, 131073, 786447, 0, 131073, 786448, 0, 131073, 786449, 0, 131073, 786450, 0, 131073, 786451, 0, 131073, 786452, 0, 131073, 786453, 0, 131073, 786454, 0, 131073, 786455, 0, 131073, 786456, 0, 131073, 786457, 0, 131073, 786458, 0, 131073, 786459, 0, 131074 )
+tile_data = PoolIntArray( 327671, 0, 0, 327672, 0, 1, 327673, 0, 1, 327674, 0, 1, 327675, 0, 1, 327676, 0, 2, 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 2, 262157, 0, 0, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 2, 262164, 0, 0, 393207, 0, 131072, 393208, 0, 131073, 393209, 0, 131073, 393210, 0, 131073, 393211, 0, 131073, 393212, 0, 131074, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131074, 327693, 0, 131072, 327694, 0, 131073, 327695, 0, 131073, 327696, 0, 131073, 327697, 0, 131074, 393238, 0, 0, 524312, 0, 0, 720909, 0, 0, 720910, 0, 1, 720911, 0, 1, 720912, 0, 1, 720913, 0, 1, 720914, 0, 1, 720915, 0, 1, 720916, 0, 1, 720917, 0, 1, 720918, 0, 1, 720919, 0, 1, 720920, 0, 1, 720921, 0, 1, 720922, 0, 1, 720923, 0, 2, 786445, 0, 131072, 786446, 0, 131073, 786447, 0, 131073, 786448, 0, 131073, 786449, 0, 131073, 786450, 0, 131073, 786451, 0, 131073, 786452, 0, 131073, 786453, 0, 131073, 786454, 0, 131073, 786455, 0, 131073, 786456, 0, 131073, 786457, 0, 131073, 786458, 0, 131073, 786459, 0, 131074 )
 
 [node name="NormalDecorationTile" type="TileMap" parent="LevelDesign"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196611, 0, 0, 196613, 0, 0, 196616, 4, 0, 196622, 3, 0, 196623, 0, 0, 589841, 1, 0, 655374, 5, 0 )
+tile_data = PoolIntArray( 196609, 0, 0, 196611, 0, 0, 196613, 0, 0, 196616, 4, 0, 196622, 3, 0, 196623, 0, 0, 589841, 1, 0, 655374, 5, 0, 655382, 0, 0 )
 
 [node name="SmallDecorationTile" type="TileMap" parent="LevelDesign"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 458753, 1, 0, 458758, 1, 0, 458762, 0, 0, 458767, 1, 0, 458779, 2, 0, 458782, 0, 0, 458784, 0, 0, 1376284, 1, 0, 1376288, 2, 0 )
+
+[node name="Light" parent="LevelDesign" instance=ExtResource( 10 )]
+position = Vector2( 554, 317 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
@@ -49,11 +53,11 @@ tile_data = PoolIntArray( 458753, 1, 0, 458758, 1, 0, 458762, 0, 0, 458767, 1, 0
 [node name="Env" type="Node2D" parent="."]
 
 [node name="Shop" parent="Env" instance=ExtResource( 8 )]
-position = Vector2( -236, 108 )
+position = Vector2( -156, 104 )
 z_index = -2
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -174, 16 )
+position = Vector2( -268, 15 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
