@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		horizontal_movement_env()
 		vertical_movement_env()
 		actions_env()
+		verify_height()
 		
 		gravity(delta)
 		velocity = move_and_slide(velocity, Vector2.UP)
@@ -126,4 +127,9 @@ func spawn_effect(effect_path: String , offset: Vector2, is_flipped: bool)-> voi
 func reset(state: bool)-> void:
 	set_physics_process(not state)
 	$Animation.play("idle")
+	
+func verify_height() -> void:
+	if position.y > 380:
+		var _realod: bool = get_tree().change_scene("res://scenes/management/level.tscn")
+	print(position.y)
 	
