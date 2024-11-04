@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/env/light.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21, 36 )
+extents = Vector2( 15, 16 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
