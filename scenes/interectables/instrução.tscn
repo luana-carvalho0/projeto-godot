@@ -16,7 +16,7 @@ visible = true
 position = Vector2( 0, 0 )
 
 [node name="Dialogicon" parent="." index="3"]
-visible = false
+position = Vector2( 0, -34 )
 
 [node name="Light" parent="." index="4"]
 visible = false
