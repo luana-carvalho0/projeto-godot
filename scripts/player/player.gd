@@ -129,14 +129,14 @@ func reset(state: bool)-> void:
 	$Animation.play("idle")
 	
 func verify_height() -> void:
-	if position.y > 500:
-		var timer = Timer.new()
-		timer.wait_time = 2.0  
-		timer.one_shot = true  
-		add_child(timer)  
-		timer.start()  
+	if position.y > 450:
+		#var timer = Timer.new()
+		#timer.wait_time = 2.0  
+		#timer.one_shot = true  
+		#add_child(timer)  
+		#timer.start()  
 		
-		yield(timer, "timeout")
+		#yield(timer, "timeout")
 	
 		get_tree().change_scene("res://scenes/management/level.tscn")
 		
