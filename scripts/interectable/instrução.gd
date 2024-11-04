@@ -11,14 +11,17 @@ var dialog_list: Dictionary = {
 	"name": "Comandos",
 	"portrait": "",
 	"dialog": [
-		"movimentar: setas, atacar: q\ndefesa: w, saltar: espaco\ninteragir: e"
+		"Pressione a tecla E para coletar objetos\ninteragir com npc's\npular dialogos",
+		"Utilize as setas do teclado para movimentar",
+		"Q para atacar\nW para defender\n",
+		"Espaco para salto\n2 vezes para um salto duplo"
 	]
 }
 
 func _ready() -> void:
 	add_child(interaction_timer)
 	interaction_timer.one_shot = true
-	interaction_timer.wait_time = 1.5  # Define o tempo de espera após o fechamento do diálogo
+	interaction_timer.wait_time = 2.0  # Define o tempo de espera após o fechamento do diálogo
 	interaction_timer.connect("timeout", self, "_on_interaction_timer_timeout")
 
 func on_shop_body_entered(body):

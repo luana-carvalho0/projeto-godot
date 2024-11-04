@@ -10,7 +10,7 @@ var dialog_list: Dictionary = {
 	"portrait": "",
 	"dialog":[
 		"Ola, ...",
-		"Posso te ajudar?"
+		"Cuidado com os penhascos e com as criaturas."
 	]
 }
 
