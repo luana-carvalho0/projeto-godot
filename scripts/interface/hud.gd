@@ -15,7 +15,7 @@ func show_inventory() -> void:
 		inventory.hide()  # Oculta o inventário ao final da animação de esconder
 	else:  # Se o inventário estiver oculto
 		inventory.show()  # Mostra o inventário antes de iniciar a animação de exibição
-		inventory.animation.play("show_container")
+		inventory.animation.play("show_container ")
 
 func spawn_dialog(interactable, dialog_list: Dictionary)-> void:
 	var dialog = DIALOG_CONTAINER.instance()
