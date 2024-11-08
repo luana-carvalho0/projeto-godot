@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		horizontal_movement_env()
 		vertical_movement_env()
 		actions_env()
+		verify_height()
 		
 		gravity(delta)
 		velocity = move_and_slide(velocity, Vector2.UP)
@@ -122,4 +123,22 @@ func spawn_effect(effect_path: String , offset: Vector2, is_flipped: bool)-> voi
 		
 	effect_isntance.global_position = global_position + offset
 	effect_isntance.play_effect()
+	
+func reset(state: bool)-> void:
+	set_physics_process(not state)
+	$Animation.play("idle")
+	
+func verify_height() -> void:
+	if position.y > 450:
+		#var timer = Timer.new()
+		#timer.wait_time = 2.0  
+		#timer.one_shot = true  
+		#add_child(timer)  
+		#timer.start()  
+		
+		#yield(timer, "timeout")
+	
+		get_tree().change_scene("res://scenes/management/level.tscn")
+		
+	print(position.y)
 	

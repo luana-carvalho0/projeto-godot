@@ -211,7 +211,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="InventoryConteiner" type="Control" groups=["inventory"]]
+[node name="InventoryContainer" type="Control" groups=["inventory"]]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -223,10 +223,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -30.0
-margin_right = 60.0
-margin_bottom = 30.0
+margin_left = 100.0
+margin_top = 60.0
+margin_right = 220.0
+margin_bottom = 120.0
 texture = ExtResource( 6 )
 
 [node name="Animation" type="AnimationPlayer" parent="Container"]

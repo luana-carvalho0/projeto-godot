@@ -130,7 +130,7 @@ func reset()-> void:
 	for children in slot_container.get_children():
 		children.reset()
 		
-func on_iten_clicked(index: int) -> void:
+func on_item_clicked(index: int) -> void:
 	aux_animation.play("show_container")
 	item_index = index
 	
