@@ -137,7 +137,7 @@ func verify_height() -> void:
 		#timer.start()  
 		
 		#yield(timer, "timeout")
-	
+		#get_tree().change_scene()
 		get_tree().change_scene("res://scenes/management/level.tscn")
 		
 	print(position.y)
