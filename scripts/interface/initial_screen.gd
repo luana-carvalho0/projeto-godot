@@ -29,7 +29,6 @@ func on_button_pressed(button_name: String)-> void:
 		"Play":
 			button_container.hide()
 			skin_select.show()
-			print("play")
 		
 		"Continue":
 			transition_screen.scene_path = "res://scenes/management/level.tscn"
