@@ -173,6 +173,11 @@ _global_script_class_icons={
 config/name="projeto-godot"
 run/main_scene="res://scenes/management/level.tscn"
 
+[autoload]
+
+transition_screen="*res://scenes/management/transition_screen.tscn"
+data_management="*res://scripts/management/data_management.gd"
+
 [display]
 
 window/size/width=320

@@ -29,17 +29,21 @@ func on_button_pressed(button_name: String)-> void:
 		"Play":
 			button_container.hide()
 			skin_select.show()
+			print("play")
 		
 		"Continue":
-			var _change_scene: bool = get_tree().change_scene("res://scenes/management/level.tscn")
-		
+			transition_screen.scene_path = "res://scenes/management/level.tscn"
+			transition_screen.fade_in()
+			
 		"Quit":
 			get_tree().quit()
 			
 		"BackButton":
 			skin_select.hide()
 			button_container.show()
-			print(button_container)
+		
+		"Sayuri":
+			send_skin_and_start_game("res://assets/player/playerUmbrellaAll.png")
 			
 	reset()
 		
@@ -60,3 +64,10 @@ func reset() -> void:
 		mouse_interection(button, "exited")
 		
 	has_save()
+	
+func send_skin_and_start_game(skin: String) -> void:
+	data_management.data_dictionary.player_texture = skin
+	transition_screen.scene_path = "res://scenes/management/level.tscn"
+	transition_screen.fade_in()
+	data_management.save_path
+	
