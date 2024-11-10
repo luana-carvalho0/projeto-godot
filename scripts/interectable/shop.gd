@@ -6,13 +6,21 @@ var can_interact: bool = true
 var player_ref: KinematicBody2D = null
 
 var dialog_list: Dictionary = {
-	"name": "Merchant",
-	"portrait": "",
-	"dialog":[
-		"Ola, ...",
-		"Cuidado com os penhascos e com as criaturas."
-	]
+	"dialog": [
+		"Kitsune: Ah, ola! Estava esperando alguem curioso o suficiente para entrar. Esta indo para o jantar no templo, nao e?",
+		"Protagonista: Como voce sabe disso?",
+		"Kitsune: E, eu tenho meus meios. Nao e todo dia que humanos sao convidados para um evento como esse. Mas eu diria que voce deve se preparar para algo um pouco... fora do comum.",
+		"Protagonista: Eu so ouvi que seria uma festa, nada de muito estranho. Acho que esta tudo bem.",
+		"Kitsune: Ah, claro, claro. Nao se preocupe. Os yokais so tem um jeito proprio de se divertir. Eles nao sao tao diferentes de nos, apenas... mais criativos, talvez.",
+		"Protagonista: Entao, o que voce acha? Devo ir?",
+		"Kitsune: A escolha e sua, mas se voce quiser saber como essa noite vai acabar, pode confiar, sera uma experiencia inesquecivel. So lembre-se de se manter firme.",
+		"Protagonista: Acho que vou descobrir por mim mesma. Obrigada pela dica.",
+		"Kitsune: Cuidado no caminho. Tsukogamis habitam essa estrada."
+	],
+	"portrait": null, #"res://assets/interface/dialog/rm.png",  
+	"name": null
 }
+
 
 func on_shop_body_entered(body):
 	player_ref = body
