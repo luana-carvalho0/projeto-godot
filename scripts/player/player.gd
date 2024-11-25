@@ -138,7 +138,7 @@ func verify_height() -> void:
 		
 		#yield(timer, "timeout")
 		#get_tree().change_scene()
-		get_tree().change_scene("res://scenes/interface/initial_screen.tscn")
+		get_tree().change_scene("res://scenes/interface/start_over_screen.tscn")
 		
 	print(position.y)
 	

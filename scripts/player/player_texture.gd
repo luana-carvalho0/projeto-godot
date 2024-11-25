@@ -94,6 +94,6 @@ func on_animation_finished(anim_name: String):
 				animation.play("crouch")
 		
 		"dead":
-			emit_signal("game_over")
-		
+			#emit_signal("game_over")
+			get_tree().change_scene("res://scenes/interface/start_over_screen.tscn")
 		
