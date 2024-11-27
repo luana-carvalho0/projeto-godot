@@ -65,6 +65,7 @@ position = Vector2( -377, 22 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+autoplay = true
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
