@@ -13,8 +13,8 @@ func _ready()-> void:
 		],
 		
 		"Mana Potion": [
-			"res://assets/item/consumable/mana_potion.png",
-			30,
+			"res://assets/item/consumable/lamen.png",
+			5,
 			"Mana",
 			5,
 			5
