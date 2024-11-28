@@ -142,3 +142,12 @@ func verify_height() -> void:
 		
 	print(position.y)
 	
+	
+func _exit_tree() -> void:
+	if dead == true:
+		return
+		
+	data_management.data_dictionary.player_position = global_position
+	data_management.save_data()
+
+	

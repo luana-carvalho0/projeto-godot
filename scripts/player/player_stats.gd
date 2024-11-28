@@ -50,6 +50,7 @@ var level_dict: Dictionary = {
 # Called when the node enters the scene tree for the first time.
 #onready var invencibillity_timer: Timer = get_node("InverncibillityTimer")
 func _ready() -> void:
+	
 	current_mana = base_mana + bonus_mana
 	max_mana = current_mana
 	
@@ -57,7 +58,7 @@ func _ready() -> void:
 	max_health = current_health
 	
 	get_tree().call_group("bar_container", "init_bar", max_health, max_mana,level_dict[str(level)] )
-
+		
 # Level up player level function
 
 func update_exp(value: int) -> void:
@@ -69,9 +70,13 @@ func update_exp(value: int) -> void:
 		current_exp = leftover
 		on_level_up()
 		level += 1
-		pass
+		#data_management.data_dictionary.current_level = level
+		
 	elif current_exp >= level_dict[str(level)] and level == 9:
 		current_exp = level_dict[str(level)]
+		
+	#data_management.data_dictionary.current_exp = current_exp
+	#data_management.save_data()
 		
 func on_level_up() -> void:
 	current_mana = base_mana + bonus_mana
@@ -99,6 +104,8 @@ func update_health(type: String, value: int) -> void:
 				player.on_hit = true
 				player.attacking = false
 				
+	data_management.data_dictionary.current_health = current_health
+	data_management.save_data()
 	get_tree().call_group("bar_container", "update_bar", "HealthBar", current_health)
 
 func verify_shield(value: int) -> void:
@@ -120,6 +127,9 @@ func update_mana(type: String, value: int) -> void:
 				current_mana = max_mana
 		"Decrease":
 			current_mana -= value
+			
+	data_management.data_dictionary.current_mana = current_mana
+	data_management.save_data()
 			
 			
 #func _process(_delta) -> void:

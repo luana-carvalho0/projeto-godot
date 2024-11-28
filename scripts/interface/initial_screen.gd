@@ -17,7 +17,7 @@ func _ready()-> void:
 	
 func has_save() -> void:
 	var file: File = File.new()
-	if file.file_exists("data_management.save_path"):
+	if file.file_exists(data_management.save_path):
 		continue_button.disabled = false
 		return
 		
