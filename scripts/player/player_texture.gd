@@ -95,5 +95,6 @@ func on_animation_finished(anim_name: String):
 		
 		"dead":
 			#emit_signal("game_over")
+			yield(get_tree().create_timer(1.0), "timeout")
 			get_tree().change_scene("res://scenes/interface/start_over_screen.tscn")
 		

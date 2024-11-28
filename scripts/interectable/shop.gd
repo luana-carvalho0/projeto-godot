@@ -7,7 +7,7 @@ var player_ref: KinematicBody2D = null
 
 var dialog_list: Dictionary = {
 	"dialog": [
-		"Kitsune: Ah, ola! Estava esperando alguem curioso o suficiente para entrar. Esta indo para o jantar no templo, nao e?",
+		"Kitsune: Ah, ola! Estava esperando alguem curioso o suficiente para entrar. Esta indo para o jantar, nao e?",
 		"Protagonista: Como voce sabe disso?",
 		"Kitsune: E, eu tenho meus meios. Nao e todo dia que humanos sao convidados para um evento como esse. Mas eu diria que voce deve se preparar para algo um pouco... fora do comum.",
 		"Protagonista: Eu so ouvi que seria uma festa, nada de muito estranho. Acho que esta tudo bem.",

@@ -6,7 +6,7 @@ func _ready()-> void:
 	drop_list = {
 		"Heal Potion ":[
 			"res://assets/item/consumable/health_potion.png",
-			25,
+			30,
 			"Health",
 			5,
 			2
@@ -14,7 +14,7 @@ func _ready()-> void:
 		
 		"Mana Potion": [
 			"res://assets/item/consumable/lamen.png",
-			5,
+			10,
 			"Mana",
 			5,
 			5

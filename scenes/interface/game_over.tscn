@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/env/background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/font/thaleah_fat.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scripts/interface/start_over_screen.gd" type="Script" id=3]
+[ext_resource path="res://scripts/interface/initial_screen.gd" type="Script" id=3]
+[ext_resource path="res://assets/player/playerUmbrellaALL.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -15,7 +16,12 @@ outline_size = 4
 outline_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 font_data = ExtResource( 2 )
 
-[node name="StartOver" type="Control"]
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+font_data = ExtResource( 2 )
+
+[node name="InitialScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -32,11 +38,11 @@ margin_left = 20.0
 margin_top = 12.0
 margin_right = 40.0
 margin_bottom = 14.0
-custom_colors/font_color = Color( 0.94902, 0.054902, 0.054902, 1 )
+custom_colors/font_color = Color( 0.054902, 0.941176, 0.196078, 1 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_fonts/font = SubResource( 1 )
-text = "Perdeu"
+text = "Venceu!"
 valign = 1
 
 [node name="ButtonContainer" type="VBoxContainer" parent="Menu"]
@@ -63,7 +69,7 @@ anchor_bottom = 1.0
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_fonts/font = SubResource( 2 )
-text = "Play"
+text = "rESTART"
 align = 2
 valign = 1
 
@@ -105,3 +111,75 @@ custom_fonts/font = SubResource( 2 )
 text = "Quit"
 align = 2
 valign = 1
+
+[node name="SkinSelect" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BackButton" type="Button" parent="SkinSelect" groups=["button"]]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 12.0
+margin_right = -20.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 60, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Label" type="Label" parent="SkinSelect/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="GameName" type="Label" parent="SkinSelect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -63.0
+margin_right = -20.0
+margin_bottom = 7.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 3 )
+text = "Selecione a
+personagem"
+valign = 1
+
+[node name="SkinContainer" type="HBoxContainer" parent="SkinSelect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+
+[node name="Sayuri" type="Button" parent="SkinSelect/SkinContainer" groups=["button"]]
+margin_right = 12.0
+margin_bottom = 40.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="SkinSelect/SkinContainer/Sayuri"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 52.0
+margin_bottom = 24.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2

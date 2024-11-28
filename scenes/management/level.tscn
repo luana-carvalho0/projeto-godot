@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/normal_decoration_tile.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/env/background.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/music/among-the-cherry-blossom.ogg" type="AudioStream" id=11]
 [ext_resource path="res://scenes/interface/general/hud.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/interectables/instrução.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/interectables/casa.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -30,19 +31,19 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 3
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 327668, 0, 0, 327669, 0, 1, 327670, 0, 1, 327671, 0, 2, 327673, 0, 0, 327674, 0, 1, 327675, 0, 1, 327676, 0, 1, 327677, 0, 2, 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 2, 262157, 0, 0, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 2, 262183, 0, 0, 262184, 0, 1, 262185, 0, 1, 262186, 0, 2, 393204, 0, 131072, 393205, 0, 131073, 393206, 0, 131073, 393207, 0, 131074, 393209, 0, 131072, 393210, 0, 131073, 393211, 0, 131073, 393212, 0, 131073, 393213, 0, 131074, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131074, 327693, 0, 131072, 327694, 0, 131073, 327695, 0, 131073, 327696, 0, 131073, 327697, 0, 131074, 327700, 0, 0, 327701, 0, 1, 327702, 0, 1, 327703, 0, 1, 327704, 0, 1, 327705, 0, 1, 327706, 0, 1, 327707, 0, 1, 327708, 0, 2, 327719, 0, 131072, 327720, 0, 131073, 327721, 0, 131073, 327722, 0, 131074, 393236, 0, 131072, 393237, 0, 131073, 393238, 0, 131073, 393239, 0, 131073, 393240, 0, 131073, 393241, 0, 131073, 393242, 0, 131073, 393243, 0, 131073, 393244, 0, 131074, 393247, 0, 0, 393248, 0, 1, 393249, 0, 1, 393250, 0, 1, 393251, 0, 2, 458783, 0, 131072, 458784, 0, 131073, 458785, 0, 131073, 458786, 0, 131073, 458787, 0, 131074 )
+tile_data = PoolIntArray( 196657, 0, 0, 196658, 0, 2, 327668, 0, 0, 327669, 0, 1, 327670, 0, 1, 327671, 0, 2, 327673, 0, 0, 327674, 0, 1, 327675, 0, 1, 327676, 0, 1, 327677, 0, 2, 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 2, 262157, 0, 0, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 2, 262184, 0, 0, 262185, 0, 1, 262186, 0, 1, 262187, 0, 2, 262193, 0, 131072, 262194, 0, 131074, 393204, 0, 131072, 393205, 0, 131073, 393206, 0, 131073, 393207, 0, 131074, 393209, 0, 131072, 393210, 0, 131073, 393211, 0, 131073, 393212, 0, 131073, 393213, 0, 131074, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131074, 327693, 0, 131072, 327694, 0, 131073, 327695, 0, 131073, 327696, 0, 131073, 327697, 0, 131074, 327700, 0, 0, 327701, 0, 1, 327702, 0, 1, 327703, 0, 1, 327704, 0, 1, 327705, 0, 1, 327706, 0, 1, 327707, 0, 1, 327708, 0, 2, 327720, 0, 131072, 327721, 0, 131073, 327722, 0, 131073, 327723, 0, 131074, 327745, 0, 0, 327746, 0, 1, 327747, 0, 1, 327748, 0, 2, 393236, 0, 131072, 393237, 0, 131073, 393238, 0, 131073, 393239, 0, 131073, 393240, 0, 131073, 393241, 0, 131073, 393242, 0, 131073, 393243, 0, 131073, 393244, 0, 131074, 393248, 0, 0, 393249, 0, 1, 393250, 0, 1, 393251, 0, 1, 393252, 0, 2, 393272, 0, 0, 393273, 0, 1, 393274, 0, 1, 393275, 0, 1, 393276, 0, 1, 393277, 0, 2, 393281, 0, 131072, 393282, 0, 131073, 393283, 0, 131073, 393284, 0, 131074, 458784, 0, 131072, 458785, 0, 131073, 458786, 0, 131073, 458787, 0, 131073, 458788, 0, 131074, 458790, 0, 0, 458791, 0, 1, 458792, 0, 1, 458793, 0, 1, 458794, 0, 1, 458795, 0, 1, 458796, 0, 1, 458797, 0, 1, 458798, 0, 1, 458799, 0, 1, 458800, 0, 1, 458801, 0, 1, 458802, 0, 1, 458803, 0, 1, 458804, 0, 2, 458808, 0, 131072, 458809, 0, 131073, 458810, 0, 131073, 458811, 0, 131073, 458812, 0, 131073, 458813, 0, 131074, 524326, 0, 131072, 524327, 0, 131073, 524328, 0, 131073, 524329, 0, 131073, 524330, 0, 131073, 524331, 0, 131073, 524332, 0, 131073, 524333, 0, 131073, 524334, 0, 131073, 524335, 0, 131073, 524336, 0, 131073, 524337, 0, 131073, 524338, 0, 131073, 524339, 0, 131073, 524340, 0, 131074 )
 
 [node name="NormalDecorationTile" type="TileMap" parent="LevelDesign"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196611, 0, 0, 196613, 0, 0, 196616, 4, 0, 196622, 3, 0, 196623, 0, 0, 196632, 1, 0 )
+tile_data = PoolIntArray( 131122, 4, 0, 196609, 0, 0, 196611, 0, 0, 196613, 0, 0, 196616, 4, 0, 196622, 3, 0, 196623, 0, 0, 196632, 1, 0, 262170, 2, 0, 327713, 2, 0, 327736, 2, 0, 327738, 2, 0, 393262, 3, 0 )
 
 [node name="SmallDecorationTile" type="TileMap" parent="LevelDesign"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 458753, 1, 0, 458758, 1, 0, 458762, 0, 0, 458767, 1, 0, 458779, 2, 0, 458782, 0, 0, 458784, 0, 0, 1376284, 1, 0, 1376288, 2, 0 )
+tile_data = PoolIntArray( 327778, 0, 0, 458753, 1, 0, 458758, 1, 0, 458762, 0, 0, 458767, 1, 0, 458779, 2, 0, 458782, 0, 0, 458784, 0, 0, 458832, 0, 0, 458833, 0, 0, 458834, 0, 0, 458835, 0, 0, 458838, 0, 0, 720960, 0, 0, 720961, 0, 0, 720967, 0, 0, 720968, 0, 0, 721009, 0, 0, 721010, 0, 0, 721014, 0, 0, 721018, 0, 0, 721019, 0, 0, 852047, 1, 0, 852048, 1, 0, 852049, 1, 0, 852051, 1, 0, 852054, 1, 0, 852064, 1, 0, 852070, 0, 0, 852071, 1, 0, 852072, 0, 0 )
 
 [node name="Light" parent="LevelDesign" instance=ExtResource( 10 )]
 position = Vector2( 776, 125 )
@@ -60,12 +61,14 @@ z_index = -2
 [node name="Instrução" parent="Env" instance=ExtResource( 13 )]
 position = Vector2( -304, 120 )
 
+[node name="Casa" parent="Env" instance=ExtResource( 14 )]
+position = Vector2( 2144, 102 )
+
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -377, 22 )
+position = Vector2( -370, 30 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-autoplay = true
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -100,12 +103,39 @@ right_gap_position = 110
 can_respawn = true
 
 [node name="EnemySpawner4" parent="Enemy" instance=ExtResource( 9 )]
-position = Vector2( 1072, 187 )
+position = Vector2( 1106, 187 )
 enemies_list = [ [ "res://scenes/enemy/kasa.tscn", -11.0, 1.0, 100.0 ] ]
 spawn_cooldown = 5.0
 enemy_amount = 1
 left_gap_position = -50
 right_gap_position = 50
+can_respawn = true
+
+[node name="EnemySpawner7" parent="Enemy" instance=ExtResource( 9 )]
+position = Vector2( 1890, 187 )
+enemies_list = [ [ "res://scenes/enemy/kasa.tscn", -11.0, 1.0, 100.0 ] ]
+spawn_cooldown = 5.0
+enemy_amount = 2
+left_gap_position = -60
+right_gap_position = 60
+can_respawn = true
+
+[node name="EnemySpawner6" parent="Enemy" instance=ExtResource( 9 )]
+position = Vector2( 1341, 123 )
+enemies_list = [ [ "res://scenes/enemy/kasa.tscn", -11.0, 1.0, 100.0 ] ]
+spawn_cooldown = 5.0
+enemy_amount = 1
+left_gap_position = -20
+right_gap_position = 20
+can_respawn = true
+
+[node name="EnemySpawner5" parent="Enemy" instance=ExtResource( 9 )]
+position = Vector2( 1441, 223 )
+enemies_list = [ [ "res://scenes/enemy/kasa.tscn", -11.0, 1.0, 100.0 ] ]
+spawn_cooldown = 5.0
+enemy_amount = 5
+left_gap_position = -150
+right_gap_position = 150
 can_respawn = true
 
 [node name="Hud" parent="." instance=ExtResource( 12 )]
