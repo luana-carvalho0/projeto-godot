@@ -7,7 +7,7 @@ var player_ref: KinematicBody2D = null
 
 var dialog_list: Dictionary = {
 	"dialog": [
-		"Bem vinda, espero que voce tenha trazido algo"
+		"Bem vinda, espero que voce tenha trazido algo!"
 	],
 	"portrait": null, 
 	"name": null

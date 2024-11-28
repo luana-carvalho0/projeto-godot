@@ -11,10 +11,9 @@ var dialog_list: Dictionary = {
 	"name": "Comandos",
 	"portrait": "",
 	"dialog": [
-		"Pressione a tecla E para coletar objetos\ninteragir com npc's\npular dialogos",
-		"Utilize as setas do teclado para movimentar\nQ para atacar\nW para defender\n",
-		"Espaco para salto\n2 vezes para um salto duplo",
-		"I para abrir/fechar o inventario\nBotao esquerdo do mouse para selecionar \nobjetos"
+		"E: para coletar objetos, interagir com npc's\npular dialogos.\nSetas do teclado para movimentar.",
+		"Q: para atacar;\tW para defender.\nEspaco: para salto,2 vezes para um salto duplo.",
+		"I: para abrir/fechar o inventario.\nBotao esquerdo do mouse para selecionar \nobjetos."
 	]
 }
 
