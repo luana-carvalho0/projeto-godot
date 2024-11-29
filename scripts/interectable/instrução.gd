@@ -12,7 +12,7 @@ var dialog_list: Dictionary = {
 	"portrait": "",
 	"dialog": [
 		"E: para coletar objetos, interagir com npc's\npular dialogos.\nSetas do teclado para movimentar.",
-		"Q: para atacar;\tW para defender.\nEspaco: para salto,2 vezes para um salto duplo.",
+		"Q: para atacar;\tW para defender.\nEspaco: para salto, 2 vezes para salto duplo.",
 		"I: para abrir/fechar o inventario.\nBotao esquerdo do mouse para selecionar \nobjetos."
 	]
 }

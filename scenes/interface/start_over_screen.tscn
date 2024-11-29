@@ -68,6 +68,7 @@ align = 2
 valign = 1
 
 [node name="Continue" type="Button" parent="Menu/ButtonContainer" groups=["button"]]
+visible = false
 margin_top = 24.0
 margin_right = 60.0
 margin_bottom = 44.0
@@ -88,9 +89,9 @@ align = 2
 valign = 1
 
 [node name="Quit" type="Button" parent="Menu/ButtonContainer" groups=["button"]]
-margin_top = 48.0
+margin_top = 24.0
 margin_right = 60.0
-margin_bottom = 68.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 60, 0 )
 focus_mode = 0
 enabled_focus_mode = 0
