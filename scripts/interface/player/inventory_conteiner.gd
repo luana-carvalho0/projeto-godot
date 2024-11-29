@@ -127,14 +127,14 @@ func reset()-> void:
 	can_click = false
 	current_state = ""
 	aux_animation.play("hide_container")
-	get_tree().paused = false
+	
 	for children in slot_container.get_children():
 		children.reset()
 		
 func on_item_clicked(index: int) -> void:
 	aux_animation.play("show_container")
 	item_index = index
-	get_tree().paused = true
+	
 	
 func mouse_interaction(state: String, object: TextureRect) -> void:
 	match state:
